@@ -1,0 +1,9 @@
+/shelf/
+/workspace.xml
+/dataSources.local.xml
+/httpRequests/
+.idea/
+changelog.txt
+/out/
+*.iml
+
