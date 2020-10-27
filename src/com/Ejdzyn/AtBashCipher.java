@@ -1,24 +1,21 @@
 package com.Ejdzyn;
 
-public class AtBashCipher {
+public class AtBashCipher implements Cipher{
 
     private final char[] alphabet = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
-    public String encode(String pass){
 
+    @Override
+    public String decode(String message) {
+        return null;
+    }
+
+    @Override
+    public String encode(String message) {
         StringBuilder encodedPass = new StringBuilder();
 
-        /*for(char c:pass.toUpperCase().toCharArray()){
-            for(int i = 0 ; i < alphabet.length;i++){
-                if(alphabet[i]==c){
-                    encodedPass.append(alphabet[alphabet.length-1-i]);
-                    break;
-                }
-            }
-        }*/
-
-        for(int i = 0 ; i < pass.length();i++){
-            char checked = pass.toUpperCase().charAt(i);
+        for(int i = 0 ; i < message.length();i++){
+            char checked = message.charAt(i);
             if(Character.isAlphabetic(checked)){
                 for(int y = 0 ; y < alphabet.length;y++){
                     if(alphabet[y]==checked){
@@ -33,5 +30,5 @@ public class AtBashCipher {
 
         return String.valueOf(encodedPass);
     }
-
 }
+
